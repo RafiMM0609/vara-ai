@@ -18,7 +18,7 @@ const REQUIRED_ENV = [
   "SUPABASE_SERVICE_KEY",
   "OPENROUTER_API_KEY",
   "OG_INDEXER_RPC",
-}
+]
 
 // ── Graceful shutdown ────────────────────────────────────────────────────────
 function onShutdown(signal) {
