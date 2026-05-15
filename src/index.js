@@ -20,6 +20,14 @@ const REQUIRED_ENV = [
   "OG_INDEXER_RPC",
 ]
 
+// ── Env validation ───────────────────────────────────────────────────────────
+function validateEnv() {
+  const missing = REQUIRED_ENV.filter((key) => !process.env[key]);
+  if (missing.length > 0) {
+    throw new Error(`Missing required environment variables: ${missing.join(", ")}`);
+  }
+}
+
 // ── Graceful shutdown ────────────────────────────────────────────────────────
 function onShutdown(signal) {
   logger.info(`Received ${signal} — shutting down gracefully`);
